@@ -1,138 +1,162 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Award, ShieldCheck, BadgePercent, Clock, Users, Leaf, ArrowRight, Phone } from 'lucide-react';
+import { ShieldCheck, Leaf, Award, Headphones, ArrowUpRight } from 'lucide-react';
+import { SparkleStar, MiniSparkle } from './SparkleIcons';
 import { companyData } from '../data/cleaningData';
 
 export default function AboutSplit({ onOpenQuoteModal }) {
-  const reasons = [
+  const bentoItems = [
     {
-      icon: Award,
-      title: 'Geschultes Fachpersonal',
-      desc: 'Top ausgebildete Schweizer Reinigungskräfte und permanente Qualitätskontrollen sichern lückenlos makellose Resultate.',
-    },
-    {
+      type: 'feature',
       icon: ShieldCheck,
+      iconBg: 'bg-emerald-50 text-emerald-600',
       title: '100% Abnahmegarantie',
-      desc: 'Integrierte Übergabegarantie mit persönlicher Begleitung vor Ort. Allfällige Nachreinigungen sind garantiert kostenlos.',
+      desc: 'Wir bürgen für die mängelfreie Übergabe mit persönlicher Begleitung vor Ort. Eventuelle Nacharbeiten sind garantiert kostenlos.',
     },
     {
-      icon: BadgePercent,
-      title: 'Transparente Fixpreise',
-      desc: 'Keine versteckten Zuschläge oder böse Überraschungen. Sie erhalten eine verbindliche Offerte exakt passend zu Ihrem Budget.',
+      type: 'photo',
+      src: '/images/kitchen_sparkle.jpg',
+      alt: 'Optimal Reinigung saubere Küche',
     },
     {
-      icon: Clock,
-      title: 'Speditive Abwicklung & Express',
-      desc: 'Auch wenn es eilt: Dank starker Teamgrösse mobilisieren wir kurzfristig zusätzliche Kräfte für termingerechte Einsätze.',
-    },
-    {
-      icon: Users,
-      title: 'Diskret, freundlich & verlässlich',
-      desc: 'Höchster Respekt vor Ihrem Eigentum, strikte Pünktlichkeit und absolute Diskretion in privaten wie geschäftlichen Räumen.',
-    },
-    {
+      type: 'feature',
       icon: Leaf,
-      title: 'Schweizer Eco-Standards',
-      desc: 'Konsequenter Einsatz biologisch abbaubarer Reinigungsmittel und moderner Methoden für Mensch, Tier und Werterhalt.',
+      iconBg: 'bg-emerald-50 text-emerald-600',
+      title: '100% Bio-Reinigungsmittel',
+      desc: 'Unsere ökologischen Pflegemittel schützen empfindliche Oberflächen, Parkett, Raumluft und schonen Natur und Haustiere.',
+    },
+    {
+      type: 'photo',
+      src: '/images/baureinigung.jpg',
+      alt: 'Optimal Reinigung gründliche Arbeitsweise',
+    },
+    {
+      type: 'photo',
+      src: '/images/window_cleaner.jpg',
+      alt: 'Optimal Reinigung Fensterreinigung',
+    },
+    {
+      type: 'feature',
+      icon: Award,
+      iconBg: 'bg-amber-50 text-amber-600',
+      title: '20+ Jahre Schweizer Erfahrung',
+      desc: 'Etablierte Expertise im Kanton Zürich & Winterthur. Unser festangestelltes Stammpersonal arbeitet nach strengsten Qualitätsrichtlinien.',
+    },
+    {
+      type: 'photo',
+      src: '/images/office_cleaning.jpg',
+      alt: 'Optimal Reinigung Büroreinigung',
+    },
+    {
+      type: 'feature',
+      icon: Headphones,
+      iconBg: 'bg-blue-50 text-blue-600',
+      title: 'Persönlicher Schweizer Service',
+      desc: 'Verbindliche Fixpreis-Offerten ohne Überraschungen, direkte telefonische Erreichbarkeit und flexible Einsatztermine auch kurzfristig.',
     },
   ];
 
   return (
     <section id="ueber-uns" className="py-20 sm:py-28 bg-[#FFFFFF] relative overflow-hidden">
       
-      {/* Subtle architectural background texture */}
+      {/* Background Graphic Grid */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.025] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <pattern id="about-dot-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+          <pattern id="why-pattern-grid" width="36" height="36" patternUnits="userSpaceOnUse">
             <circle cx="2" cy="2" r="1.5" fill="#162039" />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill="url(#about-dot-grid)" />
+        <rect width="100%" height="100%" fill="url(#why-pattern-grid)" />
       </svg>
+
+      {/* Floating 4-Pointed Sparkle Stars in Background */}
+      <div aria-hidden="true" className="pointer-events-none">
+        <div className="absolute top-16 left-1/4 text-slate-300">
+          <SparkleStar className="w-6 h-6 text-slate-400/70" />
+        </div>
+        <div className="absolute top-28 right-16 text-[#C90C12]/40">
+          <MiniSparkle className="w-4 h-4 text-[#C90C12]/50" />
+        </div>
+        <div className="absolute bottom-16 right-1/4 text-emerald-600/50">
+          <SparkleStar className="w-5 h-5 text-emerald-600/60" />
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Editorial Section Header: Pure Typography, NO pill container */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 sm:mb-16 gap-6">
-          <div className="space-y-3 max-w-2xl">
-            <div className="text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
-              WARUM OPTIMAL REINIGUNG
-            </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#162039] tracking-tight">
-              Ihr Partner für Sauberkeit mit <span className="font-italic-accent text-[#C90C12]">über 20 Jahren</span> Erfahrung
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
-              Als traditionsreiches Reinigungsunternehmen mit Hauptsitz in Zürich und Stützpunkt in Winterthur garantieren wir kurze Anfahrtswege, speditive Abwicklung und höchste Schweizer Gründlichkeit.
-            </p>
+        {/* Section Header: Matching Sparkle Touch "Why Choose Us" */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18 space-y-3 relative">
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C90C12]" />
+            <span>WARUM OPTIMAL REINIGUNG</span>
           </div>
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => onOpenQuoteModal()}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-[#162039] hover:bg-[#C90C12] transition-colors shadow-md shadow-slate-900/10 cursor-pointer font-display uppercase tracking-wider"
-            >
-              <span>Offerte anfragen</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#162039] tracking-tight">
+            Ihre Vorteile bei <span className="font-italic-accent text-[#C90C12]">Schweizer Qualitätsreinigung</span>
+          </h2>
+
+          <p className="text-xs sm:text-sm md:text-base text-slate-600 max-w-xl mx-auto leading-relaxed font-sans">
+            Bei Optimal Reinigung stehen kompromisslose Schweizer Gründlichkeit, persönliche Betreuung und 100% Abnahmegarantie an erster Stelle.
+          </p>
         </div>
 
-        {/* 3x2 Grid of Authentic Reasons (Faithfully matching Sparkle Touch & Cleanifty) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {reasons.map((r, idx) => {
-            const IconComponent = r.icon;
+        {/* 8-Item Bento Grid Alternating Features & Photos (Strictly matching Sparkle Touch reference) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {bentoItems.map((item, idx) => {
+            if (item.type === 'feature') {
+              const IconComp = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 sm:p-7 rounded-3xl bg-[#FAF9F5] border border-slate-200/80 hover:border-slate-300 hover:shadow-lg transition-all flex flex-col justify-between group hover:-translate-y-1.5 duration-300"
+                >
+                  <div className="space-y-4">
+                    <div className={`w-11 h-11 rounded-2xl ${item.iconBg} flex items-center justify-center font-bold group-hover:scale-110 transition-transform`}>
+                      <IconComp className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-base font-display font-black text-[#162039] tracking-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            }
+
             return (
               <div
                 key={idx}
-                className="bg-[#FAF9F5] hover:bg-white p-7 sm:p-8 rounded-3xl border border-slate-200/80 hover:border-red-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="rounded-3xl overflow-hidden shadow-md border-2 border-white aspect-[4/3] sm:aspect-auto min-h-[180px] sm:min-h-[220px] relative group hover:-translate-y-1.5 transition-transform duration-300"
               >
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-white group-hover:bg-[#C90C12] text-[#C90C12] group-hover:text-white border border-slate-200/80 group-hover:border-transparent flex items-center justify-center shadow-xs transition-colors duration-300 mb-6">
-                    <IconComponent className="w-6 h-6 stroke-[2]" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-display font-extrabold text-[#162039] tracking-tight group-hover:text-[#C90C12] transition-colors mb-2.5">
-                    {r.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
-                    {r.desc}
-                  </p>
-                </div>
-
-                <div className="pt-5 mt-5 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-bold text-slate-400 font-display">
-                  <span className="uppercase tracking-wider">Schweizer Standard</span>
-                  <span className="text-[#C90C12]">Geprüft ✓</span>
-                </div>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
               </div>
             );
           })}
         </div>
 
-        {/* Bottom Editorial Callout Strip */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-red-50 text-[#C90C12] flex items-center justify-center font-bold shrink-0">
-              <Phone className="w-6 h-6" />
-            </div>
-            <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-slate-400 font-display">Persönliche Beratung in Zürich &amp; Winterthur</div>
-              <div className="text-base sm:text-lg font-black text-[#162039] font-display">Rufen Sie uns direkt an: {companyData.phone}</div>
-            </div>
-          </div>
+        {/* Bottom CTA Row (Non-repetitive button label) */}
+        <div className="mt-12 sm:mt-16 flex flex-wrap items-center justify-center gap-4">
+          <button
+            onClick={() => onOpenQuoteModal()}
+            className="flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-extrabold text-white bg-[#162039] hover:bg-[#C90C12] shadow-lg shadow-slate-900/15 hover:shadow-red-600/20 transition-all hover:scale-105 active:scale-95 cursor-pointer font-display uppercase tracking-wider"
+          >
+            <span>Reinigung planen</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </button>
 
-          <div className="flex items-center gap-3">
-            <a
-              href={`tel:${companyData.phone.replace(/\s+/g, '')}`}
-              className="px-5 py-2.5 rounded-xl text-xs font-bold text-[#162039] bg-white hover:bg-slate-100 border border-slate-300 font-display"
-            >
-              Jetzt anrufen
-            </a>
-            <button
-              onClick={() => onOpenQuoteModal()}
-              className="px-5 py-2.5 rounded-xl text-xs font-black text-white bg-[#C90C12] hover:bg-[#9E0A0F] font-display uppercase tracking-wider"
-            >
-              Kostenlose Offerte
-            </button>
-          </div>
+          <a
+            href={`tel:${companyData.phone.replace(/\s+/g, '')}`}
+            className="flex items-center gap-2 px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold text-[#162039] bg-slate-100 hover:bg-slate-200 transition-colors font-display"
+          >
+            <span>Hotline: {companyData.phone}</span>
+          </a>
         </div>
 
       </div>

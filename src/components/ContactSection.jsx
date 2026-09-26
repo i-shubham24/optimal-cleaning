@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { companyData } from '../data/cleaningData';
 import confetti from 'canvas-confetti';
+import { SparkleStar, MiniSparkle, DotCluster, BubblesIcon, CleaningSprayIcon, StarBurst } from './SparkleIcons';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -41,6 +43,17 @@ export default function ContactSection() {
         <rect width="100%" height="100%" fill="url(#contact-dot-grid)" />
       </svg>
 
+      {/* Floating Sparkle Stars & Cleaning Graphics in Background */}
+      <div aria-hidden="true" className="pointer-events-none">
+        <SparkleStar className="absolute top-16 left-12 sm:left-20 w-7 h-7 text-[#C90C12]/20" />
+        <SparkleStar className="absolute top-24 right-14 sm:right-28 w-6 h-6 text-slate-300" />
+        <MiniSparkle className="absolute top-40 left-1/3 w-4 h-4 text-emerald-500/40" />
+        <BubblesIcon className="absolute bottom-20 left-12 w-9 h-9 text-sky-400/30" />
+        <CleaningSprayIcon className="absolute bottom-28 right-16 w-8 h-8 text-slate-300/40" />
+        <StarBurst className="absolute top-2/3 right-8 w-6 h-6 text-amber-500/30" />
+        <DotCluster className="absolute bottom-12 left-1/4 w-8 h-8 text-slate-200" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header: Pure Typography, NO pill container */}
@@ -49,7 +62,7 @@ export default function ContactSection() {
             KONTAKT &amp; BERATUNG
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#162039] tracking-tight font-display">
-            Wir freuen uns auf Ihre Anfrage
+            Wir freuen uns auf <span className="font-italic-accent text-[#C90C12]">Ihre Anfrage</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-sans">
             Holen Sie sich jetzt Ihre kostenlose und unverbindliche Offerte für Zürich &amp; Winterthur.

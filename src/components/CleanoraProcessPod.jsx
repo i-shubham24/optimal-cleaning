@@ -1,95 +1,123 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { SparkleStar, MiniSparkle } from './SparkleIcons';
 
 export default function CleanoraProcessPod({ onOpenQuoteModal }) {
   const steps = [
     {
       num: '01',
-      title: 'Offerte anfragen & Fixpreis sichern',
-      desc: 'Wählen Sie Ihre gewünschte Dienstleistung oder nutzen Sie unseren Preisrechner. Wir erstellen Ihnen umgehend eine transparente, verbindliche Offerte ohne versteckte Nebenkosten.',
+      title: 'Service wählen & buchen',
+      desc: 'Wählen Sie Ihren gewünschten Reinigungsservice und fordern Sie unkompliziert Ihre verbindliche Offerte zum garantierten Schweizer Fixpreis an.',
+      image: '/images/wohnungsreinigung_orig.jpg',
+      alt: 'Optimal Reinigung Buchungsservice',
+      stagger: 'mt-0',
     },
     {
       num: '02',
-      title: 'Pünktlicher Schweizer Reinigungseinsatz',
-      desc: 'Unser festangestelltes, geschultes Fachpersonal rückt mit modernen Profi-Geräten und biologischen Schweizer Reinigungsmitteln pünktlich an und arbeitet nach strengem Pflichtenheft.',
+      title: 'Gründlich reinigen & pflegen',
+      desc: 'Unser geschultes Schweizer Fachpersonal rückt pünktlich an, arbeitet speditiv nach strengem Pflichtenheft und nutzt modernste Eco-Reiniger.',
+      image: '/images/kitchen_sparkle.jpg',
+      alt: 'Optimal Reinigung gründliche Ausführung',
+      stagger: 'lg:-mt-8', // Staggered higher exactly matching reference card 02!
     },
     {
       num: '03',
-      title: '100% Abnahmegarantie & Übergabebegleitung',
-      desc: 'Bei Umzügen begleiten wir Sie persönlich bei der offiziellen Wohnungsabgabe mit der Verwaltung. Sollte eine Nachreinigung gefordert werden, erfolgt diese sofort und kostenlos vor Ort.',
+      title: 'Frische & 100% Garantie',
+      desc: 'Freuen Sie sich über perfekt gereinigte Räume. Bei Umzügen begleiten wir Sie persönlich bei der Abgabe mit 100% Abnahmegarantie.',
+      image: '/images/office_cleaning.jpg',
+      alt: 'Optimal Reinigung saubere Räume',
+      stagger: 'mt-0',
     },
   ];
 
   return (
-    <section id="ablauf" className="py-20 sm:py-28 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="ablauf" className="py-20 sm:py-28 bg-[#FAF8F5] relative overflow-hidden">
+      
+      {/* Floating 4-Pointed Sparkle Stars in Background */}
+      <div aria-hidden="true" className="pointer-events-none">
+        <div className="absolute top-16 right-24 text-slate-300">
+          <SparkleStar className="w-6 h-6 text-slate-400/60" />
+        </div>
+        <div className="absolute bottom-20 left-16 text-[#C90C12]/40">
+          <MiniSparkle className="w-4 h-4 text-[#C90C12]/50" />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* High-End Deep Swiss Navy Contrast Pod (Cleanifty & Sparkle Touch Inspired) */}
-        <div className="rounded-[2.5rem] bg-[#162039] text-white p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden border border-slate-800">
-          
-          {/* Subtle Ambient Radial Lighting */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-          
-          {/* Header Inside Pod: Pure Typography, NO pill container */}
-          <div className="max-w-3xl mb-12 sm:mb-16 space-y-3">
-            <div className="text-xs font-black uppercase tracking-[0.22em] text-red-400 font-display">
-              EINFACHER &amp; TRANSPARENTER ABLAUF
+        {/* Section Header (Matching reference media_1790393241184.png) */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 sm:mb-20 gap-6">
+          <div className="space-y-3 max-w-xl">
+            {/* Tag */}
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#C90C12] font-display uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C90C12]" />
+              <span>UNSER ABLAUF</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black tracking-tight leading-tight">
-              Wie Optimal für <span className="font-italic-accent text-red-400">makellosen Glanz</span> sorgt
+            
+            {/* Headline */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#162039] tracking-tight leading-[1.15]">
+              Wie wir jeden Raum <br className="hidden sm:inline" />
+              <span className="font-italic-accent text-[#C90C12]">makellos sauber halten</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
-              Von der ersten Kontaktaufnahme bis zur reibungslosen Übergabe: Zuverlässig, pünktlich und mit 100% Garantie.
-            </p>
           </div>
 
-          {/* 3 Numbered Steps Grid (Cleanifty 01, 02, 03 layout) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {steps.map((st, idx) => (
-              <div
-                key={st.num}
-                className="bg-slate-900/90 rounded-3xl p-7 sm:p-8 border border-slate-700/80 hover:border-red-500/50 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
-              >
-                {/* Large architectural background number */}
-                <div className="text-5xl sm:text-6xl font-display font-black text-slate-800 group-hover:text-red-950/60 transition-colors mb-6">
-                  {st.num}
-                </div>
+          <p className="text-xs sm:text-sm md:text-base text-slate-600 max-w-md leading-relaxed font-sans lg:text-right">
+            Wir setzen auf strukturierte Schweizer Methoden für kompromisslose Hygiene, Werterhalt und ein garantiert frisches Raumgefühl in Zürich &amp; Winterthur.
+          </p>
+        </div>
 
-                <div>
-                  <h3 className="text-lg sm:text-xl font-display font-black text-white tracking-tight group-hover:text-red-300 transition-colors mb-3">
-                    {st.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                    {st.desc}
-                  </p>
-                </div>
+        {/* 3 Tall Rounded Arch Photo Cards matching reference media_1790393241184.png */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 items-start">
+          {steps.map((st) => (
+            <div 
+              key={st.num} 
+              className={`flex flex-col group ${st.stagger} transition-transform duration-300 hover:-translate-y-2`}
+            >
+              {/* Photo Arch Card Container */}
+              <div className="relative rounded-t-[3.5rem] rounded-b-2xl overflow-hidden shadow-xl bg-slate-900 aspect-[4/4.8] w-full">
+                
+                {/* Background Photo */}
+                <img 
+                  src={st.image} 
+                  alt={st.alt} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
 
-                <div className="pt-6 mt-6 border-t border-slate-800 flex items-center gap-2 text-xs font-bold text-slate-400 font-display">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Schritt {idx + 1} von 3</span>
+                {/* Big Cutout Number on Top Arch (Strictly matching reference 01, 02, 03 style) */}
+                <div className="absolute top-4 left-6 pointer-events-none">
+                  <span className="font-display font-black text-5xl sm:text-6xl text-white tracking-tight drop-shadow-md select-none">
+                    {st.num}
+                  </span>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* Pod Bottom Action Bar */}
-          <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-300 font-sans">
-              <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
-              <span>100% Abnahmegarantie &amp; Begleitung bei der Wohnungsabgabe durch Optimal Reinigung.</span>
+              {/* Title & Description Below Card */}
+              <div className="pt-6 px-2 space-y-2">
+                <h3 className="text-lg sm:text-xl font-display font-extrabold text-[#162039] tracking-tight">
+                  {st.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                  {st.desc}
+                </p>
+              </div>
+
             </div>
+          ))}
+        </div>
 
-            <button
-              onClick={() => onOpenQuoteModal()}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-black text-white bg-[#C90C12] hover:bg-[#9E0A0F] transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-red-600/30 cursor-pointer font-display uppercase tracking-wider shrink-0"
-            >
-              <span>Jetzt Auftrag starten</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-
+        {/* Bottom CTA Button matching reference media_1790393241184.png */}
+        <div className="mt-14 sm:mt-18 flex justify-center">
+          <button
+            onClick={() => onOpenQuoteModal()}
+            className="group flex items-center gap-3 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#162039] hover:bg-[#C90C12] shadow-xl hover:shadow-2xl hover:shadow-red-600/25 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer font-display tracking-tight"
+          >
+            <span className="w-7 h-7 rounded-full bg-white/15 group-hover:bg-white group-hover:text-[#C90C12] flex items-center justify-center transition-all duration-300 shrink-0">
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </span>
+            <span>Jetzt Schritt 1 starten</span>
+          </button>
         </div>
 
       </div>

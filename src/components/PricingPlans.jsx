@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Check, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
+import PriceText from './PriceText';
+import { SparkleStar, MiniSparkle, DotCluster, BubblesIcon, CleaningSprayIcon, StarBurst } from './SparkleIcons';
 
 export default function PricingPlans({ onSelectPlan }) {
   const [billingCycle, setBillingCycle] = useState('single'); // 'single' or 'subscription'
@@ -12,7 +14,7 @@ export default function PricingPlans({ onSelectPlan }) {
       title: 'Kleine Wohnung & Studio',
       subtitle: '1.0 bis 2.5 Zimmer (1.5 Zi ab CHF 480.- / 2.5 Zi ab CHF 590.-)',
       priceSingle: 'ab CHF 480.-',
-      priceSub: 'ab CHF 42 / Std.',
+      priceSub: 'ab CHF 42 / hrs',
       popular: false,
       features: [
         '100% gesetzliche Abnahmegarantie mit persönlicher Begleitung',
@@ -31,7 +33,7 @@ export default function PricingPlans({ onSelectPlan }) {
       title: 'Familienwohnung Bestseller',
       subtitle: '3.0 bis 4.5 Zimmer (3.5 Zi ab CHF 790.- / 4.5 Zi ab CHF 890.-)',
       priceSingle: 'ab CHF 790.-',
-      priceSub: 'ab CHF 45 / Std.',
+      priceSub: 'ab CHF 45 / hrs',
       popular: true,
       features: [
         '100% gesetzliche Abnahmegarantie mit persönlicher Begleitung',
@@ -51,7 +53,7 @@ export default function PricingPlans({ onSelectPlan }) {
       title: 'Grosswohnung & Einfamilienhaus',
       subtitle: '5.5+ Zimmer & Häuser (5.5 Zi ab CHF 990.- / Haus ab CHF 1\'290.-)',
       priceSingle: 'ab CHF 990.-',
-      priceSub: 'ab CHF 52 / Std.',
+      priceSub: 'ab CHF 52 / hrs',
       popular: false,
       features: [
         '100% gesetzliche Abnahmegarantie mit Begleitung',
@@ -78,6 +80,17 @@ export default function PricingPlans({ onSelectPlan }) {
         </defs>
         <rect width="100%" height="100%" fill="url(#pricing-dot-grid)" />
       </svg>
+
+      {/* Floating Sparkle Stars & Cleaning Graphics in Background */}
+      <div aria-hidden="true" className="pointer-events-none">
+        <SparkleStar className="absolute top-16 left-8 sm:left-16 w-6 h-6 text-[#C90C12]/30" />
+        <SparkleStar className="absolute top-24 right-10 sm:right-20 w-7 h-7 text-slate-400/50" />
+        <MiniSparkle className="absolute top-44 left-1/3 w-4 h-4 text-emerald-600/40" />
+        <BubblesIcon className="absolute top-1/2 -left-2 sm:left-6 w-10 h-10 text-sky-500/30" />
+        <StarBurst className="absolute top-1/2 right-6 sm:right-12 w-6 h-6 text-amber-500/35" />
+        <CleaningSprayIcon className="absolute bottom-16 right-8 sm:right-16 w-9 h-9 text-slate-400/40" />
+        <DotCluster className="absolute bottom-20 left-10 w-8 h-8 text-slate-300" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -141,8 +154,9 @@ export default function PricingPlans({ onSelectPlan }) {
               >
                 {/* Popular Top Tag */}
                 {plan.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest bg-[#C90C12] text-white shadow-md font-display">
-                    MEISTGEWÄHLT IM KANTON ZÜRICH
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest bg-[#C90C12] text-white shadow-md font-display flex items-center gap-1.5 whitespace-nowrap">
+                    <MiniSparkle className="w-3.5 h-3.5 text-amber-300" />
+                    <span>MEISTGEWÄHLT IM KANTON ZÜRICH</span>
                   </div>
                 )}
 
@@ -173,7 +187,7 @@ export default function PricingPlans({ onSelectPlan }) {
                   <div className="my-6 py-4 border-y border-dashed border-slate-200/40">
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl sm:text-4xl font-display font-black tracking-tight">
-                        {price}
+                        <PriceText price={price} />
                       </span>
                     </div>
                     <div className="text-[11px] mt-1 text-slate-400 font-sans">
@@ -207,14 +221,16 @@ export default function PricingPlans({ onSelectPlan }) {
                 <button
                   type="button"
                   onClick={() => onSelectPlan({ plan: plan.title, estimatedPrice: price })}
-                  className={`w-full py-4 px-6 rounded-2xl text-xs sm:text-sm font-extrabold uppercase tracking-wider font-display transition-all cursor-pointer flex items-center justify-center gap-2 ${
+                  className={`w-full py-3.5 px-6 rounded-2xl text-xs sm:text-sm font-bold font-display tracking-tight transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:scale-98 ${
                     plan.popular
-                      ? 'bg-[#C90C12] hover:bg-[#9E0A0F] text-white shadow-xl shadow-red-600/30'
-                      : 'bg-[#162039] hover:bg-[#C90C12] text-white'
+                      ? 'bg-gradient-to-r from-[#C90C12] to-[#B00A0F] hover:from-[#B00A0F] hover:to-[#9E0A0F] text-white shadow-xl shadow-red-600/35 hover:shadow-2xl hover:shadow-red-600/45'
+                      : 'bg-[#162039] hover:bg-[#C90C12] text-white shadow-md hover:shadow-xl'
                   }`}
                 >
                   <span>Diesen Plan wählen</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="w-6 h-6 rounded-full bg-white/20 group-hover:bg-white group-hover:text-[#C90C12] flex items-center justify-center transition-all duration-300 shrink-0">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
                 </button>
 
               </div>

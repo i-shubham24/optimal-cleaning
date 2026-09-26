@@ -1,6 +1,8 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { MapPin, CheckCircle2, ShieldCheck, Navigation, Clock, Building2 } from 'lucide-react';
 import { regionsCovered, companyData } from '../data/cleaningData';
+import { SparkleStar, MiniSparkle, BubblesIcon, StarBurst, DotCluster } from './SparkleIcons';
 
 export default function CoverageAreas() {
   return (
@@ -15,6 +17,16 @@ export default function CoverageAreas() {
         </defs>
         <rect width="100%" height="100%" fill="url(#cov-dot-grid)" />
       </svg>
+
+      {/* Floating Sparkle Stars & Cleaning Graphics in Background */}
+      <div aria-hidden="true" className="pointer-events-none">
+        <SparkleStar className="absolute top-14 left-10 sm:left-20 w-6 h-6 text-[#C90C12]/25" />
+        <SparkleStar className="absolute top-20 right-12 sm:right-24 w-7 h-7 text-slate-400/50" />
+        <MiniSparkle className="absolute top-36 left-1/3 w-4 h-4 text-emerald-600/40" />
+        <BubblesIcon className="absolute bottom-16 left-8 sm:left-14 w-8 h-8 text-sky-400/35" />
+        <StarBurst className="absolute bottom-20 right-10 sm:right-20 w-6 h-6 text-amber-500/30" />
+        <DotCluster className="absolute top-1/2 right-6 w-8 h-8 text-slate-300/80" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -35,7 +47,7 @@ export default function CoverageAreas() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           
           {/* Card 1: Zürich */}
-          <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-xl border border-slate-200/90 flex flex-col justify-between hover:border-red-200 transition-all">
+          <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-xl border border-slate-200/90 flex flex-col justify-between hover:border-red-200 transition-all hover:-translate-y-1.5 duration-300">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-slate-100">
                 <div className="flex items-center gap-3.5">
@@ -86,7 +98,7 @@ export default function CoverageAreas() {
           </div>
 
           {/* Card 2: Winterthur */}
-          <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-xl border border-slate-200/90 flex flex-col justify-between hover:border-red-200 transition-all">
+          <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-xl border border-slate-200/90 flex flex-col justify-between hover:border-red-200 transition-all hover:-translate-y-1.5 duration-300">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-slate-100">
                 <div className="flex items-center gap-3.5">

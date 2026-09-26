@@ -311,7 +311,7 @@ export default function CostCalculator({ initialConfig, onOpenQuoteWithConfig })
             TRANSPARENTE RICHTPREISE
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#162039] tracking-tight font-display">
-            Interaktiver Preisrechner für Ihre Reinigung
+            Interaktiver Preisrechner für <span className="font-italic-accent text-[#C90C12]">Ihre Reinigung</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-sans">
             Kalkulieren Sie in wenigen Klicks einen verlässlichen Richtpreis in Schweizer Franken für Zürich und Winterthur. Keine versteckten Kosten.

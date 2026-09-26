@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, HelpCircle, PhoneCall } from 'lucide-react';
 import { faqData, companyData } from '../data/cleaningData';
+import { SparkleStar, MiniSparkle, DotCluster, BubblesIcon, SqueegeeIcon } from './SparkleIcons';
 
 export default function FAQSection({ onOpenQuoteModal }) {
   const [openIndex, setOpenIndex] = useState(0);
@@ -23,6 +24,16 @@ export default function FAQSection({ onOpenQuoteModal }) {
         <rect width="100%" height="100%" fill="url(#faq-dot-grid)" />
       </svg>
 
+      {/* Floating Sparkle Stars & Cleaning Graphics in Background */}
+      <div aria-hidden="true" className="pointer-events-none">
+        <SparkleStar className="absolute top-16 left-8 sm:left-24 w-7 h-7 text-[#C90C12]/20" />
+        <SparkleStar className="absolute top-28 right-10 sm:right-24 w-6 h-6 text-slate-300" />
+        <MiniSparkle className="absolute top-1/2 left-12 w-4 h-4 text-emerald-500/40" />
+        <BubblesIcon className="absolute bottom-24 right-16 w-9 h-9 text-sky-400/30" />
+        <SqueegeeIcon className="absolute bottom-20 left-16 w-8 h-8 text-slate-300/40" />
+        <DotCluster className="absolute top-1/3 right-8 w-8 h-8 text-slate-200" />
+      </div>
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header: Pure Typography, NO pill container */}
@@ -31,7 +42,7 @@ export default function FAQSection({ onOpenQuoteModal }) {
             HÄUFIG GESTELLTE FRAGEN
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#162039] tracking-tight font-display">
-            Transparente Antworten auf Ihre Fragen
+            Transparente Antworten auf <span className="font-italic-accent text-[#C90C12]">Ihre Fragen</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-sans">
             Alles Wissenswerte rund um Abnahmegarantie, Fixpreise, Versicherung und Ablauf in Zürich &amp; Winterthur.

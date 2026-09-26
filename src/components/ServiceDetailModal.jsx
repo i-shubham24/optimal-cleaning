@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, CheckCircle2, ArrowRight, ShieldCheck, Sparkles, Phone } from 'lucide-react';
 import { companyData } from '../data/cleaningData';
+import PriceText from './PriceText';
 
 export default function ServiceDetailModal({ service, onClose, onBookService }) {
   if (!service) return null;
@@ -101,7 +102,7 @@ export default function ServiceDetailModal({ service, onClose, onBookService }) 
             </div>
             <div className="text-right">
               <div className="text-xs text-slate-400 font-display">Richtpreis</div>
-              <div className="text-sm font-extrabold text-[#C90C12] font-display">{service.priceStartingAt}</div>
+              <div className="text-sm font-extrabold text-[#C90C12] font-display"><PriceText price={service.priceStartingAt} /></div>
             </div>
           </div>
 

@@ -47,7 +47,7 @@ export const servicesData = [
     badge: "Bestseller",
     description: "Ziehen Sie vollkommen stressfrei um. Wir reinigen Ihre bisherige Wohnung blitzblank und begleiten Sie persönlich bei der offiziellen Wohnungsabgabe.",
     fullDescription: "Ein Wohnungswechsel erfordert höchste Präzision. Verwaltungen in Zürich und Winterthur stellen strenge Anforderungen. Unser geschultes Fachpersonal kennt jedes Abnahmeprotokoll im Detail und führt vor der Übergabe eine eigene Vorabnahme durch. Sollten Sie im Urlaub sein, übernehmen wir die Übergabe gerne mit Vollmacht.",
-    image: "/images/kitchen_sparkle.jpg",
+    image: "/images/service_umzug.jpg",
     priceStartingAt: "ab CHF 480.-",
     priceTiers: [
       { rooms: "1 bis 1.5 Zimmer", price: "ab CHF 480.-" },
@@ -75,8 +75,8 @@ export const servicesData = [
     badge: "Kerngeschäft",
     description: "Ein sauberes Büro ist die beste Visitenkarte Ihres Unternehmens. Wir bieten flexible Reinigungszyklen am frühen Morgen oder nach Feierabend.",
     fullDescription: "Die Büroreinigung ist das traditionsreiche Kerngeschäft von Optimal Reinigung. Wir betreuen Kanzleien, Praxen, Agenturen und Gewerbebetriebe im gesamten Kanton Zürich mit höchster Diskretion, festen Reinigungsteams und individuellen Pflichtenheften.",
-    image: "/images/office_cleaning.jpg",
-    priceStartingAt: "ab CHF 45 / Std.",
+    image: "/images/service_buero.jpg",
+    priceStartingAt: "ab CHF 45 / hrs",
     features: [
       "Regelmässige Reinigung nach individuellem Pflichtenheft",
       "Hygienische Desinfektion von Tastaturen, Schreibtischen und Telefonen",
@@ -93,8 +93,8 @@ export const servicesData = [
     badge: "Beliebt",
     description: "Geniessen Sie mehr Freizeit und ein strahlend sauberes Zuhause. Flexibel buchbar als Einzeltermin oder im massgeschneiderten Abonnement.",
     fullDescription: "Unsere erfahrenen und festangestellten Reinigungskräfte pflegen Ihre vier Wände sorgfältig, diskret und pünktlich. Ob wöchentlich, zweiwöchentlich oder als grosser Frühjahrsputz: Wir richten uns ganz nach Ihren persönlichen Wünschen.",
-    image: "/images/hero_cleaner.jpg",
-    priceStartingAt: "ab CHF 42 / Std.",
+    image: "/images/cleaner_lady_mop.jpg",
+    priceStartingAt: "ab CHF 42 / hrs",
     features: [
       "Individuelle Reinigungsintervalle wöchentlich oder alle 14 Tage",
       "Staubwischen, Staubsaugen und feuchte Bodenpflege aller Räume",
@@ -129,8 +129,8 @@ export const servicesData = [
     badge: "Kontinuität",
     description: "Sichern Sie die Langlebigkeit Ihrer Immobilien. Wir betreuen Mehrfamilienhäuser, Gewerbeobjekte und öffentliche Einrichtungen zuverlässig.",
     fullDescription: "Regelmässige Pflege schützt hochwertige Bodenbeläge und Oberflächen vor Abnutzung. Wir erstellen ein transparentes Konzept, abgestimmt auf die Nutzung Ihres Gebäudes und Ihre spezifischen Qualitätsansprüche.",
-    image: "/images/supplies.jpg",
-    priceStartingAt: "ab CHF 42 / Std.",
+    image: "/images/service_unterhalt.jpg",
+    priceStartingAt: "ab CHF 42 / hrs",
     features: [
       "Treppenhaus und Eingangsbereichsreinigung",
       "Pflege von Holz, Parkett, Stein und Teppichböden",
@@ -147,7 +147,7 @@ export const servicesData = [
     badge: "Komplettservice",
     description: "Umfassende Betreuung für Eigentümer und Verwaltungen: Von Fassade und Treppenhaus bis Tiefgarage und Aussenbereich.",
     fullDescription: "Gebäudereinigung bedeutet für uns die ganzheitliche Werterhaltung Ihrer Immobilie. Wir betreuen Mehrfamilienhäuser, Bürokomplexe und Gewerbeareale mit modernem Equipment und eingespielten Teams.",
-    image: "/images/hero_cleaner.jpg",
+    image: "/images/service_sanitaer.jpg",
     priceStartingAt: "Individuelle Offerte",
     features: [
       "Fassaden und Eingangsbereichsreinigung",
@@ -165,8 +165,8 @@ export const servicesData = [
     badge: "Neubau & Umbau",
     description: "Vom Baustellenchaos zum bezugsbereiten Vorzeigeobjekt. Wir entfernen Baustaub, Farbreste, Silikon und Zementschleier termingerecht.",
     fullDescription: "Nach Umbau, Sanierung oder Neubau ist eine gründliche Bauendreinigung unerlässlich. Wir übergeben Ihr Gebäude schlüsselfertig und glänzend sauber an Architekten, Bauherren und Mieter.",
-    image: "/images/baureinigung.jpg",
-    priceStartingAt: "ab CHF 52 / Std.",
+    image: "/images/service_bau.jpg",
+    priceStartingAt: "ab CHF 52 / hrs",
     features: [
       "Baugrobreinigung während der Bauphase",
       "Baufeinreinigung vor der offiziellen Bauabnahme",
