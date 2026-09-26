@@ -32,8 +32,9 @@ export default function CoverageAreas() {
         
         {/* Section Header: Pure Typography, NO pill container */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16 space-y-3">
-          <div className="text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
-            EINSATZGEBIET KANTON ZÜRICH
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C90C12]" />
+            <span>EINSATZGEBIET KANTON ZÜRICH</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#162039] font-display tracking-tight">
             Ihre Reinigungsfirma für <span className="font-italic-accent text-[#C90C12]">Zürich &amp; Winterthur</span>

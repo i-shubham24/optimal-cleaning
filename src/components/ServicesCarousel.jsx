@@ -34,7 +34,11 @@ export default function ServicesCarousel({ onSelectServiceForQuote }) {
         
         {/* Header matching Dribbble template with Blue + Cursive Red */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-10 sm:mb-14 gap-6">
-          <div>
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C90C12]" />
+              <span>UNSERE LEISTUNGEN</span>
+            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display tracking-tight text-[#162039] leading-tight">
               <span className="font-extrabold text-[#162039]">Unsere beliebtesten </span>
               <span className="font-italic-accent text-[#C90C12]">Reinigungsdienste</span>

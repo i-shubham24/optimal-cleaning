@@ -59,8 +59,9 @@ export default function SteppedDedication() {
         {/* Section Header: Blue + Cursive Red strictly matching style */}
         <div className="max-w-3xl mb-10 sm:mb-14 space-y-3">
           {/* Eyebrow tag */}
-          <div className="text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
-            ZAHLEN &amp; LEISTUNGSBILANZ
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C90C12]" />
+            <span>ZAHLEN &amp; LEISTUNGSBILANZ</span>
           </div>
 
           {/* Main Title */}

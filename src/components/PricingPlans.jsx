@@ -96,8 +96,9 @@ export default function PricingPlans({ onSelectPlan }) {
         
         {/* Section Header: Pure Typography, NO pill container */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
-            TRANSPARENTE FIXPREISE
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C90C12]" />
+            <span>TRANSPARENTE FIXPREISE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#162039] tracking-tight">
             Faire Fixpreise ohne <span className="font-italic-accent text-[#C90C12]">versteckte Kosten</span>

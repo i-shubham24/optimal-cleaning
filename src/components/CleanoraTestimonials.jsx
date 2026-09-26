@@ -74,8 +74,9 @@ export default function CleanoraTestimonials() {
       {/* Section Header: Plain Text Eyebrow (NO pills) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-10 sm:mb-14">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
-            VERIFIZIERTE KUNDENMEINUNGEN
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C90C12]" />
+            <span>VERIFIZIERTE KUNDENMEINUNGEN</span>
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display tracking-tight leading-tight">
             <span className="font-extrabold text-[#162039]">Kundenstimmen &amp; </span>

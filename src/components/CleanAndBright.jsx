@@ -117,8 +117,9 @@ export default function CleanAndBright({ onOpenBooking }) {
           <div className="lg:col-span-7 space-y-6 relative">
             {/* Header: Plain Text Eyebrow (NO pills) */}
             <div className="space-y-3">
-              <div className="text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
-                WIR SCHAFFEN WOHLBEFINDEN
+              <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-[#C90C12] font-display">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C90C12]" />
+                <span>WIR SCHAFFEN WOHLBEFINDEN</span>
               </div>
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display tracking-tight leading-tight">
                 <span className="font-extrabold text-[#162039]">Wir machen Räume </span>
